@@ -12,10 +12,10 @@ function MealsOverviewScreen({ route, navigation }) {
     });
 
     useLayoutEffect(() => {
-        const cateogryTitle = CATEGORIES.find(category => category.id === catId).title;
+        const categoryTitle = CATEGORIES.find(category => category.id === catId).title;
 
         navigation.setOptions({
-            title: cateogryTitle,
+            title: categoryTitle,
         });
     }, [catId, navigation]);
 
@@ -23,6 +23,7 @@ function MealsOverviewScreen({ route, navigation }) {
         const item = itemData.item;
 
         const mealItemProps = {
+            id: item.id,
             title: item.title,
             imageUrl: item.imageUrl,
             affordability: item.affordability,
